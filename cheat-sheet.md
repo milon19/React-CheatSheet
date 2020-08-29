@@ -174,7 +174,7 @@ const App = (props) => {
         { name: 'Milon Mahato', age: 21 },
         { name: 'Nazmul Hassan', age: 21 },
         { name: 'Fakrul Islam', age: 23  },
-      ]
+      ] // otherState will gone
     });
   }
 
