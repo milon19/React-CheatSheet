@@ -127,7 +127,7 @@ class NewPost extends Component { // state can only be accessed in class-based c
 }
 ```
 
-state example:
+## state example in Class Based Component:
 
 ```javascript
  state = {
@@ -150,4 +150,45 @@ state example:
     })
   }
 
+```
+
+## useState() in function based component:
+```javascript
+import React, { useState } from 'react';
+import './App.css';
+import Person from './Person/Person'
+
+const App = (props) => {
+  const [ personState, setPersonsState ] = useState({
+    persons: [
+      { name: 'Milon', age: 21 },
+      { name: 'Nazmul', age: 21 },
+      { name: 'fakrul', age: 23  },
+    ],
+    otherState: 'Some other state'
+  });
+
+  const switchNameHandler = () => {
+    setPersonsState({
+      persons: [
+        { name: 'Milon Mahato', age: 21 },
+        { name: 'Nazmul Hassan', age: 21 },
+        { name: 'Fakrul Islam', age: 23  },
+      ]
+    });
+  }
+
+  return (
+    <div className="App">
+      <button onClick = {switchNameHandler}>Switch Name</button>
+      <Person name={personState.persons[0].name} age={personState.persons[0].age}/>
+      <Person name={personState.persons[1].name} age={personState.persons[1].age}>
+        I'm a big man
+      </Person>
+      <Person name={personState.persons[2].name} age={personState.persons[2].age}/>
+
+    </div>
+
+  );
+};
 ```
